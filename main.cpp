@@ -26,10 +26,13 @@ int main() {
     string zm;
 	for (int i=0; i<=wyr.length(); i++)
 	{
-	    if (wyr[i]!='*' && wyr[i]!='/' && wyr[i]!='+' && wyr[i]!='-' && wyr[i]!=0)
+	    //if (wyr[i]!='*' && wyr[i]!='/' && wyr[i]!='+' && wyr[i]!='-' && wyr[i]!=0)
+	    if (wyr[i]>='0' && wyr[i]<='9' && wyr[i]!=0)
 	    {
-	       zm += wyr[i];
-	    } else{
+	        zm += wyr[i];
+	    }
+	    else if (wyr[i]=='*' || wyr[i]=='/' || wyr[i]=='+' || wyr[i]=='-' || wyr[i]==0)
+        {
 	        for (int k=0; k<zm.length();k++ )
 	        {
 	           double tmp = (zm[k]-'0')*(pow(10,zm.length()-k))/10;
